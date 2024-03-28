@@ -16,6 +16,7 @@ mapstyle = st.sidebar.selectbox(
 st.pydeck_chart(
     pdk.Deck(
         map_style=f"{mapstyle}",  # 'light', 'dark', 'satellite-v9', 'road'
+        map_provider=mapbox,
         initial_view_state=pdk.ViewState(
             latitude=37.76,
             longitude=-122.4,
