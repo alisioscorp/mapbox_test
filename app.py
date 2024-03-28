@@ -12,11 +12,31 @@ mapstyle = st.sidebar.selectbox(
     options=["light"], #"dark", "Satellite", "road"],
     format_func=str.capitalize,
 )
+# # Create a map layer with the given coordinates
+# layer1 = pdk.Layer(type = 'ScatterplotLayer', # layer type
+#                   data=df_bos, # data source
+#                   get_position='[lon, lat]', # coordinates
+#                   get_radius=500, # scatter radius
+#                   get_color=[0,0,255],   # scatter color
+#                   pickable=True # work with tooltip
+#                   )
+
+# # Can create multiple layers in a map
+# # For more layer information
+# # https://deckgl.readthedocs.io/en/latest/layer.html
+# # Line layer https://pydeck.gl/gallery/line_layer.html
+# layer2 = pdk.Layer('ScatterplotLayer',
+#                   data=df_bos,
+#                   get_position='[lon, lat]',
+#                   get_radius=100,
+#                   get_color=[255,0,255],
+#                   pickable=True
+#                   )
 
 st.pydeck_chart(
     pdk.Deck(
         map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
-        layers=[layer1,layer2], # The following layer would be on top of the previous layers
+        #layers=[layer1,layer2], # The following layer would be on top of the previous layers
         initial_view_state=pdk.ViewState(
             latitude=-12.04,
             longitude=-77.0428,
