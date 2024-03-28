@@ -52,15 +52,17 @@ st.pydeck_chart(
             latitude=-12.04,
             longitude=-77.0428,
             zoom=10,
-            pitch=20,
+            pitch=50,
         ),
         layers=[
             pdk.Layer(
                 'HexagonLayer', #"ScatterplotLayer",
                 data=df,
+                opacity=0.8,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
-                elevation_scale=10, #get_radius=20,
+                elevation_scale=10, 
+                get_radius=20,
                 #elevation_range=[0, 3000],
                 extruded=True,
                 coverage=1
