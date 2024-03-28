@@ -9,7 +9,7 @@ df = pd.DataFrame(
 
 mapstyle = st.sidebar.selectbox(
     "Choose Map Style:",
-    options=["light", "dark", "outdoors", "road"],
+    options=["light", "dark", "Satellite", "road"],
     format_func=str.capitalize,
 )
 
