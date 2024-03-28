@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [-12.04, -77.0428], columns=["lat", "lon"]
+    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"]
 )
 
 mapstyle = st.sidebar.selectbox(
@@ -50,7 +50,7 @@ st.pydeck_chart(
         #layers=[layer1,layer2], # The following layer would be on top of the previous layers
         initial_view_state=pdk.ViewState(
             latitude=-12.04,
-            longitude=-77.0428,
+            longitude=-76.94,
             zoom=10,
             pitch=50,
         ),
@@ -64,7 +64,7 @@ st.pydeck_chart(
                 elevation_scale=10, 
                 #get_radius=20,
                 #elevation_range=[0, 3000],
-                radius=80,
+                radius=150,
                 #elevation_scale=4,
                 #elevation_range=[0, 1000],
                 pickable=True,
