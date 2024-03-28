@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [12, -77.4], columns=["lat", "lon"]
+    np.random.randn(1000, 2) / [50, 50] + [-12, -77.4], columns=["lat", "lon"]
 )
 
 mapstyle = st.sidebar.selectbox(
@@ -28,7 +28,7 @@ st.pydeck_chart(
                 data=df,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
-                get_radius=200,
+                get_radius=20,
             ),
         ],
     )
