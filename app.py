@@ -9,13 +9,13 @@ df = pd.DataFrame(
 
 mapstyle = st.sidebar.selectbox(
     "Choose Map Style:",
-    options=["light", "dark", "Satellite", "road"],
+    options=["light"], #"dark", "Satellite", "road"],
     format_func=str.capitalize,
 )
 
 st.pydeck_chart(
     pdk.Deck(
-        map_style=f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
+        map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
         initial_view_state=pdk.ViewState(
             latitude=37.76,
             longitude=-122.4,
