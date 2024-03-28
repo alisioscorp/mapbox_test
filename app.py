@@ -64,7 +64,7 @@ st.pydeck_chart(
                 elevation_scale=10, 
                 #get_radius=20,
                 #elevation_range=[0, 3000],
-                radius=20,
+                radius=80,
                 #elevation_scale=4,
                 #elevation_range=[0, 1000],
                 pickable=True,
