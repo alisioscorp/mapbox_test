@@ -62,8 +62,12 @@ st.pydeck_chart(
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
                 elevation_scale=10, 
-                get_radius=20,
+                #get_radius=20,
                 #elevation_range=[0, 3000],
+                radius=20,
+                #elevation_scale=4,
+                #elevation_range=[0, 1000],
+                pickable=True,
                 extruded=True,
                 coverage=1
             ),
