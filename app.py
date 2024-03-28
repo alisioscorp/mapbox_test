@@ -60,7 +60,7 @@ st.pydeck_chart(
                 data=df,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
-                elevation_scale=50, #get_radius=20,
+                elevation_scale=20, #get_radius=20,
                 extruded=True,
             ),
         ],
