@@ -33,6 +33,17 @@ mapstyle = st.sidebar.selectbox(
 #                   pickable=True
 #                   )
 
+# >>> layer = pydeck.Layer(
+# >>>     'HexagonLayer',
+# >>>     UK_ACCIDENTS_DATA,
+# >>>     get_position=['lng', 'lat'],
+# >>>     auto_highlight=True,
+# >>>     elevation_scale=50,
+# >>>     pickable=True,
+# >>>     elevation_range=[0, 3000],
+# >>>     extruded=True,
+# >>>     coverage=1)
+
 st.pydeck_chart(
     pdk.Deck(
         map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
@@ -45,11 +56,12 @@ st.pydeck_chart(
         ),
         layers=[
             pdk.Layer(
-                "ScatterplotLayer",
+                'HexagonLayer', #"ScatterplotLayer",
                 data=df,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
-                get_radius=20,
+                elevation_scale=50, #get_radius=20,
+                extruded=True,
             ),
         ],
     )
