@@ -4,7 +4,11 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"]
+    [np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"],
+    np.random.randn(1000, 2) / [70, 70] + [-12.59, -75.99], columns=["lat", "lon"],
+    np.random.randn(1000, 2) / [60, 80] + [-12.4, -76.0], columns=["lat", "lon"],
+    np.random.randn(1000, 2) / [50, 60] + [-12.61, -75.91], columns=["lat", "lon"]
+    ]
 )
 
 mapstyle = st.sidebar.selectbox(
@@ -49,9 +53,11 @@ st.pydeck_chart(
         map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
         #layers=[layer1,layer2], # The following layer would be on top of the previous layers
         initial_view_state=pdk.ViewState(
-            latitude=-12.04,
-            longitude=-76.94,
-            zoom=10,
+#            latitude=-12.04,
+#            longitude=-76.94,
+            latitude=-12.595,
+            longitude=-75.990,
+            zoom=7,
             pitch=50,
         ),
         layers=[
