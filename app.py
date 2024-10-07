@@ -4,12 +4,13 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
-    [np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"],
-    np.random.randn(1000, 2) / [70, 70] + [-12.59, -75.99], columns=["lat", "lon"],
-    np.random.randn(1000, 2) / [60, 80] + [-12.4, -76.0], columns=["lat", "lon"],
-    np.random.randn(1000, 2) / [50, 60] + [-12.61, -75.91], columns=["lat", "lon"]
-    ]
-)
+    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"])
+df2 = pd.DataFrame(
+    np.random.randn(1000, 2) / [70, 70] + [-12.59, -75.99], columns=["lat", "lon"])
+df3 = pd.DataFrame(
+    np.random.randn(1000, 2) / [60, 80] + [-12.4, -76.0], columns=["lat", "lon"])
+df4 = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 60] + [-12.61, -75.91], columns=["lat", "lon"])
 
 mapstyle = st.sidebar.selectbox(
     "Choose Map Style:",
@@ -63,7 +64,7 @@ st.pydeck_chart(
         layers=[
             pdk.Layer(
                 'HexagonLayer', #"ScatterplotLayer",
-                data=df,
+                data=[df,df2,df3,df4],
                 opacity=0.8,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
