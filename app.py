@@ -12,6 +12,17 @@ df3 = pd.DataFrame(
 df4 = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 60] + [-12.61, -75.91], columns=["lat", "lon"])
 
+# list of data frames
+dataframes = [df, df2, df3, df4] 
+
+# dictionary to save data frames
+frames={} 
+
+for key, value in enumerate(dataframes):    
+  frames[key] = value # assigning data frame from list to key in dictionary
+  print("key: ", key)
+  print(frames[key], "\n")
+    
 mapstyle = st.sidebar.selectbox(
     "Choose Map Style:",
     options=["light"], #"dark", "Satellite", "road"],
@@ -64,7 +75,7 @@ st.pydeck_chart(
         layers=[
             pdk.Layer(
                 'HexagonLayer', #"ScatterplotLayer",
-                data={df,df2,df3,df4},
+                data=frames, #df,
                 opacity=0.8,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
