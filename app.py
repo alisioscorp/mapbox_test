@@ -64,7 +64,7 @@ st.pydeck_chart(
         layers=[
             pdk.Layer(
                 'HexagonLayer', #"ScatterplotLayer",
-                data=[df,df2,df3,df4],
+                data={df,df2,df3,df4},
                 opacity=0.8,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
