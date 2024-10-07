@@ -4,9 +4,9 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"])  #near Lima
 df2 = pd.DataFrame(
-    np.random.randn(1000, 2) / [100, 100] + [-12.59, -75.99], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [1000, 1000] + [-12.59, -75.99], columns=["lat", "lon"])
 df3 = pd.DataFrame(
     np.random.randn(1000, 2) / [60, 80] + [-12.4, -76.0], columns=["lat", "lon"])
 df4 = pd.DataFrame(
