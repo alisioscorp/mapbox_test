@@ -69,7 +69,7 @@ st.pydeck_chart(
 #            longitude=-76.94,
             latitude=-12.595,
             longitude=-75.990,
-            zoom=7,
+            zoom=9,
             pitch=50,
         ),
         layers=[
@@ -82,7 +82,7 @@ st.pydeck_chart(
                 elevation_scale=10, 
                 #get_radius=20,
                 #elevation_range=[0, 3000],
-                radius=150,
+                radius=350,  #orig 150
                 #elevation_scale=4,
                 #elevation_range=[0, 1000],
                 pickable=True,
